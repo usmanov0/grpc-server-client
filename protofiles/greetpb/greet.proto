@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package protofiles;
+option go_package = "protofiles/greetpb";
+
+
+message GreetRequest{
+  string countryCode = 1;
+  string userName = 2;
+}
+
+message GreetResponse{
+  string result = 1;
+}
+
+
+service GreetService{
+  rpc Greet(GreetRequest) returns (GreetResponse);
+}
